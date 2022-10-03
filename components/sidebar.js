@@ -23,6 +23,7 @@ import {
   FiLogIn,
   FiLogOut,
 } from "react-icons/fi";
+import ThemeToggle from "./themeToggle";
 
 const GuestLinkItems = [
   { name: "Home", path: "/", icon: FiHome },
@@ -96,6 +97,16 @@ const SidebarContent = ({ onClose, ...rest }) => {
               {link.name}
             </NavItem>
           ))}
+      <Flex
+        align="center"
+        p="4"
+        mx="4"
+        borderRadius="lg"
+        role="group"
+        cursor="pointer"
+      >
+        <ThemeToggle />
+      </Flex>
     </Box>
   );
 };
@@ -103,10 +114,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 const NavItem = ({ icon, path, children, ...rest }) => {
   return (
     <NextLink href={path} passHref>
-      <Link
-        style={{ textDecoration: "none" }}
-        _focus={{ boxShadow: "none" }}
-      >
+      <Link style={{ textDecoration: "none" }} _focus={{ boxShadow: "none" }}>
         <Flex
           align="center"
           p="4"
