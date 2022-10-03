@@ -9,3 +9,4 @@ This is the initial setup for the Epic PM app.
 - Build out the API for Chime Meetings
 - Build out the Messaging system
   - Build in the ability to send email notifications and reply directly from the email
+- Add theme toggle to sidebar
