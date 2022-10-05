@@ -1,14 +1,25 @@
-import React, { useEffect } from "react";
-import { getProjects } from "../src/projectController";
+import React, { useEffect, useState } from "react";
+import { getProject } from "../src/projectController";
 
 function Projects() {
+  const [project, setProject] = useState(null);
   useEffect(() => {
-    getProjects();
-  });
+    const pro = getProject("abc123").then(item => {
+      setProject(item);
+      console.log(item);
+    });
+  }, []);
+
   return (
     <div>
       <p>Projects</p>
-      <p>Load in projects from DynamoDB</p>
+      {project && (
+        <div>
+          <p>UUID: {project.uuid.S}</p>
+          <p>Name: {project.name.S}</p>
+          <p>Priority: {project.priority.N}</p>
+        </div>
+      )}
     </div>
   );
 }
