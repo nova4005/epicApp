@@ -1,7 +1,7 @@
 import { DynamoDBClient, GetItemCommand } from "@aws-sdk/client-dynamodb";
 import { Auth } from "aws-amplify";
 
-async function getProjects() {
+async function getTasks() {
   var myHeaders = new Headers();
   return await Auth.currentSession().then((creds) => {
     myHeaders.append("Authorization", creds.getIdToken().getJwtToken());
@@ -12,16 +12,16 @@ async function getProjects() {
       redirect: "follow",
     };
 
-    return fetch(process.env.NEXT_PUBLIC_PROJECTS_URL, requestOptions)
+    return fetch(process.env.NEXT_PUBLIC_TASKS_URL, requestOptions)
       .then((response) => response.json())
       .then((result) => result.Items)
       .catch((error) => console.log("error", error));
   });
 }
 
-async function getProject(uuid) {
+async function getTask(uuid) {
   const params = {
-    TableName: "Projects",
+    TableName: "Tasks",
     Key: {
       uuid: { S: uuid },
     },
@@ -38,4 +38,4 @@ async function getProject(uuid) {
   });
 }
 
-export { getProjects, getProject };
+export { getTasks, getTask };
