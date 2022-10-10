@@ -12,6 +12,7 @@ import {
   DrawerContent,
   Text,
   useDisclosure,
+  Img,
 } from "@chakra-ui/react";
 import {
   FiHome,
@@ -81,9 +82,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
-        </Text>
+        <Img src="logo-full.png" alt="Epicteq" />
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {rest.authenticated === true

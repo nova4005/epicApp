@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { getProject } from "../src/projectController";
+import { getProjects } from "../src/projectController";
 
 function Projects() {
-  const [project, setProject] = useState(null);
+  const [projects, setProjects] = useState(null);
   useEffect(() => {
-    const pro = getProject("abc123").then(item => {
-      setProject(item);
-      console.log(item);
+    getProjects().then((project) => {
+      setProjects(project);
     });
   }, []);
 
   return (
     <div>
       <p>Projects</p>
-      {project && (
-        <div>
-          <p>UUID: {project.uuid.S}</p>
-          <p>Name: {project.name.S}</p>
-          <p>Priority: {project.priority.N}</p>
-        </div>
-      )}
+      {projects &&
+        projects.map((project) => (
+          <div key={project.uuid}>
+            <p>UUID: {project.uuid}</p>
+            <p>Name: {project.name}</p>
+            <p>Priority: {project.priority}</p>
+          </div>
+        ))}
     </div>
   );
 }
