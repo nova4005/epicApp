@@ -11,6 +11,8 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { getTasks } from "../src/taskController";
+import Layout from "../components/layout";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function Tasks() {
   const [tasks, setTasks] = useState(null);
@@ -59,5 +61,13 @@ function Tasks() {
     </div>
   );
 }
+
+Tasks.getLayout = function getLayout(page, auth, theme) {
+  return (
+    <ChakraProvider theme={theme}>
+      <Layout authenticated={auth}>{page}</Layout>
+    </ChakraProvider>
+  );
+};
 
 export default Tasks;

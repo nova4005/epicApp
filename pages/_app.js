@@ -24,13 +24,9 @@ function MyApp({ Component, pageProps }) {
       mono: "Roboto Mono, monospace",
     },
   });
-  return (
-    <ChakraProvider theme={theme}>
-      <Layout authenticated={userAuth}>
-        <Component {...pageProps} />
-      </Layout>
-    </ChakraProvider>
-  );
+
+  const getLayout = Component.getLayout || ((page) => page);
+  return getLayout(<Component {...pageProps} />, userAuth, theme);
 }
 
 export default MyApp;

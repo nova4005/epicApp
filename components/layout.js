@@ -1,6 +1,4 @@
 import Sidebar from "./sidebar";
-import Footer from "./footer";
-import Header from "./header";
 import { Box, Flex, Grid, GridItem } from "@chakra-ui/react";
 
 export default function Layout({ authenticated, children }) {
