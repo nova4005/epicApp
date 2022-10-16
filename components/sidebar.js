@@ -35,7 +35,6 @@ const AuthenticatedLinkItems = [
   { name: "Home", path: "/", icon: FiHome },
   { name: "Projects", path: "/projects", icon: FiTruck },
   { name: "Tasks", path: "/tasks", icon: FiTrello },
-  { name: "Meetings", path: "/meetings", icon: FiUsers },
   { name: "Settings", path: "/settings", icon: FiSettings },
   { name: "Logout", path: "/logout", icon: FiLogOut },
 ];

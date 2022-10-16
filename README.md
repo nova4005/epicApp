@@ -43,3 +43,4 @@ For now there are some things that are not needed for a proof of concept MVP so 
 - Events (Teamwork has this but not sure if we use it)
 - Automation tools that integrate with different systems such as Keap, ActiveCampaign, Zapier, etc.
 - Build in a file viewer so that users can take a quick look at a file without having to download it. This is only for certain files such as images and different text files (txt, doc, docx).
+- import tools from other Project Management apps.

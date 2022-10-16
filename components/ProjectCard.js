@@ -36,7 +36,7 @@ function ProjectCard({project, ...rest}) {
         >
           (Company Name)
         </Heading>
-        <Stack align={"center"}>
+        <Stack>
           <Link display={"flex"} alignItems={"center"} w="100%" gap={"0.5rem"} fontSize={"sm"}>
             <Icon as={FiTag} /> Add Tag
           </Link>
