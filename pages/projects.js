@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { getProjects } from "../src/projectController";
 import ProjectCard from "../components/ProjectCard";
+import Layout from "../components/layout";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function Projects() {
   const [projects, setProjects] = useState(null);
@@ -35,5 +37,13 @@ function Projects() {
     </div>
   );
 }
+
+Projects.getLayout = function getLayout(page, auth, theme) {
+  return (
+    <ChakraProvider theme={theme}>
+      <Layout authenticated={auth}>{page}</Layout>
+    </ChakraProvider>
+  );
+};
 
 export default Projects;

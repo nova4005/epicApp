@@ -1,5 +1,12 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import ThreeTierPricing from "../components/ThreeTierPricing";
+import styles from "../styles/Home.module.css";
+import { ChakraProvider } from "@chakra-ui/react";
+import BasicStatistics from "../components/BasicStatistics";
+import Carousel from "../components/Carousel";
+import GridBlurredBackdrop from "../components/Testimonials";
+import SplitWithImage from "../components/Features";
+import LargeWithAppLinksAndSocial from "../components/footer";
 
 export default function Home() {
   return (
@@ -11,11 +18,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to EpicPM!
-        </h1>
-        <p className={styles.description}>Start your next great project!</p>
+        <Carousel />
+        <SplitWithImage />
+        <ThreeTierPricing />
+        <BasicStatistics />
+        <GridBlurredBackdrop />
+        <LargeWithAppLinksAndSocial />
       </main>
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page, auth, theme) {
+  return <ChakraProvider theme={theme}>{page}</ChakraProvider>;
+};
