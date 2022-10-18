@@ -46,10 +46,9 @@ export default function CallToActionWithIllustration() {
             Learn more
           </Button>
         </Stack>
-        <Flex w={"full"}>
+        <Flex w={"100vw"} mt={0}>
           <Illustration
             height={{ sm: "24rem", lg: "28rem" }}
-            mt={{ base: 12, sm: 16 }}
           />
         </Flex>
       </Stack>

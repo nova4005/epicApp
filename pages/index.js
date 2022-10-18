@@ -7,6 +7,7 @@ import Carousel from "../components/Carousel";
 import GridBlurredBackdrop from "../components/Testimonials";
 import SplitWithImage from "../components/Features";
 import LargeWithAppLinksAndSocial from "../components/footer";
+import WithSubnavigation from "../components/NavBar";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <WithSubnavigation />
         <Carousel />
         <SplitWithImage />
         <ThreeTierPricing />
