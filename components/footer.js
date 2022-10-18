@@ -10,6 +10,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import ThemeToggle from "./themeToggle";
 
 const Logo = (props) => {
   return <Img src="logo-full.png" alt="Epicteq" />;
@@ -39,9 +40,7 @@ export default function LargeWithLogoLeft() {
             <Box>
               <Logo color={useColorModeValue("gray.700", "white")} />
             </Box>
-            <Text fontSize={"sm"}>
-              © 2022 Epicteq. All rights reserved
-            </Text>
+            <Text fontSize={"sm"}>© 2022 Epicteq. All rights reserved</Text>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Product</ListHeader>
@@ -65,15 +64,9 @@ export default function LargeWithLogoLeft() {
             <Link href={"#"}>Terms of Service</Link>
             <Link href={"#"}>Legal</Link>
             <Link href={"#"}>Privacy Policy</Link>
-            <Link href={"#"}>Status</Link>
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Follow Us</ListHeader>
-            <Link href={"#"}>Facebook</Link>
-            <Link href={"#"}>Twitter</Link>
-            <Link href={"#"}>Dribbble</Link>
-            <Link href={"#"}>Instagram</Link>
-            <Link href={"#"}>LinkedIn</Link>
+            <ThemeToggle />
           </Stack>
         </SimpleGrid>
       </Container>
